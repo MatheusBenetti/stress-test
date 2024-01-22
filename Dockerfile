@@ -6,7 +6,7 @@ COPY go.mod ./
 
 COPY . .
 
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o stresstest .
+RUN CGO_ENABLED=0 GOOS=linux go build -o stresstest .
 
 FROM alpine:latest
 
@@ -14,4 +14,4 @@ WORKDIR /app
 
 COPY --from=builder /app/stresstest .
 
-CMD ["./stresstest"]
+CMD ["./stresstest", "--url=http://google.com", "--requests=100", "--concurrency=10"]
