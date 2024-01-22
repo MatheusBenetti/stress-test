@@ -20,7 +20,6 @@ func main() {
 		return
 	}
 
-	// Iniciar o teste de carga
 	startTime := time.Now()
 	var wg sync.WaitGroup
 	counter := make(chan int, *requests)
@@ -38,7 +37,6 @@ func main() {
 		close(counter)
 	}()
 
-	// Agregar resultados
 	totalRequests := 0
 	status200 := 0
 	otherStatus := make(map[int]int)
@@ -52,7 +50,6 @@ func main() {
 		}
 	}
 
-	// Gerar relatório
 	duration := time.Since(startTime)
 	fmt.Printf("Tempo total gasto na execução: %v\n", duration)
 	fmt.Printf("Quantidade total de requests realizados: %d\n", totalRequests)
