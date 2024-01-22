@@ -9,7 +9,6 @@ import (
 )
 
 func main() {
-	// Definir flags de linha de comando
 	url := flag.String("url", "", "URL do serviço a ser testado")
 	requests := flag.Int("requests", 0, "Número total de requests")
 	concurrency := flag.Int("concurrency", 1, "Número de chamadas simultâneas")
