@@ -14,4 +14,4 @@ WORKDIR /app
 
 COPY --from=builder /app/stresstest .
 
-CMD ["./stresstest", "--url=http://google.com", "--requests=100", "--concurrency=10"]
+CMD ["./stresstest", "--url=http://google.com", "--requests=1000", "--concurrency=10"]
